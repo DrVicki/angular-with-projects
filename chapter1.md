@@ -26,5 +26,5 @@ Some examples of components are as follows:
 
 Components of an Angular application can be logically organized as a tree: Figure 1.1 – Component tree 
 
-An Angular application typically has one main component, called AppComponent, by convention. Each component 
+An Angular application typically has one main component, called ```AppComponent```, by convention. Each component 
 in the tree can communicate and interact with its siblings
