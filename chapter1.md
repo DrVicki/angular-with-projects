@@ -27,4 +27,69 @@ Some examples of components are as follows:
 Components of an Angular application can be logically organized as a tree: Figure 1.1 – Component tree 
 
 An Angular application typically has one main component, called ```AppComponent```, by convention. Each component 
-in the tree can communicate and interact with its siblings
+in the tree can communicate and interact with its siblings using an application programming interface defined by 
+each one. An Angular application can have many features called modules. Each module serves a block of single 
+functionality that corresponds to a particular application domain or workflow. Angular modules are used to group 
+Angular components that share similar functionality: 
+
+Figure 1.2 – Module hierarchy 
+
+In the previous diagram, the dashed line circles represent Angular modules. An Angular application typically has one 
+main module, called ```AppModule```, by convention. Each module can import other modules in an Angular application if 
+they wish to use part of their functionality. The functionality of a module can be further analyzed in the 
+presentational and business logic of a feature. Angular components should only be responsible for handling the presentational 
+logic and delegating business logic tasks to services. The Angular framework provides Angular services to components using a 
+built-in dependency injection (DI) mechanism. The Angular DI framework uses special-purpose objects, called injectors, to hide 
+much of the complexity of providing dependencies to an Angular application. Components are not required to know any of the actual 
+implementation of an Angular service. They only need to ask for it from an injector. An Angular service should follow the single 
+responsibility principle, and it should not cross boundaries between different Angular modules. 
+
+Some examples of services are as follows: 
+  - Access data from a backend API using the HTTP protocol. 
+  - Interact with the local storage of the browser. 
+  - Error logging. 
+  - Data transformations. 
+
+An Angular developer does not need to remember how to create components, 
+modules, and services by heart while building an Angular application. 
+Luckily, the Angular CLI can assist us by providing a command-line 
+interface to accomplish these tasks. 
+
+## Introduction to the Angular CLI 
+
+The Angular CLI is a tool created by the Angular team that improves the 
+developer experience while building Angular applications. It hides much of 
+the complexity of scaffolding and configuring an Angular application while 
+allowing the developer to concentrate on what they do best – coding! 
+
+Before we can start using the Angular CLI, we need to set up the following 
+prerequisites in our system: 
+
+  - Node.js: A JavaScript runtime built on the v8 engine of Chrome. You can 
+download any Long-Term Support (LTS) version from https://nodejs.org/en. 
+
+  - npm: A package manager for the Node.js runtime. We can then install the 
+Angular CLI using ```npm``` from the command line: 
+
+```npm install -g @angular/cli``` 
+
+We can use the ```-g``` option to install the Angular CLI globally since we 
+want to create Angular applications from any path of our operating system. 
+
+Important note 
+Installing the Angular CLI may require administrative privileges in some operating 
+systems. To verify the Angular CLI has been installed correctly, we can run the 
+following from the command line: 
+
+```ng version``` 
+
+The previous command will report the version of the Angular CLI installed in our system. 
+The Angular CLI provides a command-line interface through the ng command, which is the 
+binary executable of the Angular CLI. It can accept various options, including the following: 
+
+  - serve: Build and serve an Angular application. 
+  - build: Build an Angular application. 
+  - test: Run the unit tests of an Angular application. 
+  - generate: Generate a new Angular artifact, such as a component or module. 
+  - add: Install a third-party library compatible with the Angular framework. 
+  - new: Create a new Angular application.
